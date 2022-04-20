@@ -1,0 +1,14 @@
+/* 
+Purpose is to get weather from openweatherAPI and suggest local
+music based on the geographical location of the city queried.
+
+Features needed:
+search bar that filters through multiple matches of city
+ query then requests weather when selected.
+
+
+
+
+
+
+*/
