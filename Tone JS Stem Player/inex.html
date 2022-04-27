@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <style type="text/css">
+            #tracks {
+                display: flex;
+            }
+            #tracks tone-channel {
+                flex-grow: 1;
+                margin: 5px;
+                width: 20%;
+            }
+        </style>
+    </head>
+    <body>
+        <tone-example label="Channel">
+            <div slot="explanation">
+                <a href="https://tonejs.github.io/docs/Channel">Tone.Channel</a> provides a simple channel interface. It allows for panning and volume changes as well as the ability to <a href="https://tonejs.github.io/docs/Solo">solo</a> (exclude audio in other Tone.Channels). 
+            </div>
+            
+            <tone-loader></tone-loader>
+            <div id="content">
+                <tone-play-toggle>play</tone-play-toggle>
+            </div>
+        </tone-example>
+        <script src="Tone.js"></script>
+    
+        <script type="text/javascript">
+            function makeChannel(name, url, pan) {
+                const channel = new Tone.Channel({
+                    pan
+                }).toDestination();
+                const player = new Tone.Player({
+                    url: `https://tonejs.github.io/audio/berklee/${url}.mp3`,
+                    loop: true
+                }).sync().start(0);
+                player.connect(channel);
+    
+            }
+        </script>
+    </body>
+    </html>
+    
+    
